@@ -15,6 +15,7 @@ import Add from '../assets/Add';
 import AddUserModalContent from './AddUserModalContent';
 import ArrowRight from '../assets/ArrowRight';
 import ArrowLeft from '../assets/ArrowLeft';
+import Badge from './Badge';
 
 const ReactQueryTable = ({ data }) => {
   const pageNumbers = [1, 2, 3, 4, 5];
@@ -48,6 +49,9 @@ const ReactQueryTable = ({ data }) => {
       {
         Header: 'Status',
         accessor: 'status',
+        Cell: (props: { value: string }) => {
+          return <Badge content={props.value} />;
+        },
       },
       {
         Header: 'Role',
