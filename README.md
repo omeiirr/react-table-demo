@@ -1,27 +1,16 @@
-# Next.js + Tailwind CSS Example
+# React Table Demo
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+https://user-images.githubusercontent.com/54888682/212495428-6d803f64-2ee5-454b-99c9-5d827c62f13d.mp4
 
-## Deploy your own
+This project is made as a demo and guide for using [react-table](https://github.com/TanStack/table) with [react-query](https://github.com/TanStack/query) for dispaying tabular data.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+This project has the following features:
+- Sorting values by column
+- Adding users
+- Editing users
+- Deleting users
+- Automatic data fetching and management using `react-query`
+- Date parsing
+- Tailwind CSS for styling
+- Custom CRUD REST API using [NextJS API Routes](https://nextjs.org/docs/api-routes/introduction)
+- Download data as CSV (work in progress)
