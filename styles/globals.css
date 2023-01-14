@@ -13,5 +13,8 @@
   .input {
     @apply w-full p-2 my-2 border-2 rounded-lg;
   }
+
+  .hover-animation {
+    @apply p-2 transition-all duration-200 rounded-full hover:bg-gray-200;
   }
 }

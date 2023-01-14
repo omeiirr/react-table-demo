@@ -78,10 +78,7 @@ const ReactQueryTable = ({ data }) => {
         Cell: ({ cell }) => {
           return (
             <div className='flex justify-center gap-4 '>
-              <button
-                className='p-2 transition-all duration-200 rounded-full hover:bg-gray-200'
-                title='Delete'
-              >
+              <button className='hover-animation' title='Delete'>
                 <Popup
                   trigger={<Trashcan width={22} height={22} />}
                   position='right center'
@@ -107,10 +104,7 @@ const ReactQueryTable = ({ data }) => {
                   )}
                 </Popup>
               </button>
-              <button
-                className='p-2 transition-all duration-200 rounded-full hover:bg-gray-200'
-                title='Edit'
-              >
+              <button className='hover-animation ' title='Edit'>
                 <Popup
                   trigger={<Pencil width={22} height={22} />}
                   position='right center'
