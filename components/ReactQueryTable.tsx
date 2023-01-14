@@ -213,28 +213,33 @@ const ReactQueryTable = ({ data }) => {
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th
-                  className='border-t-[1px] p-4 font-semibold text-left '
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
-                >
-                  <div className='flex items-center gap-3'>
-                    <span>{column.render('Header')}</span>
-                    {/* Add a sort direction indicator */}
-                    <span className='mt-1'>
-                      {column.isSorted ? (
-                        column.isSortedDesc ? (
-                          <ArrowDown />
+              {headerGroup.headers.map((column) => {
+                return (
+                  <th
+                    className='border-t-[1px] p-4 font-semibold text-left '
+                    {...column.getHeaderProps(column.getSortByToggleProps())}
+                  >
+                    <div className='flex items-center gap-3'>
+                      <span>{column.render('Header')}</span>
+                      {/* Add a sort direction indicator */}
+                      <span className='mt-1'>
+                        {column.isSorted ? (
+                          column.isSortedDesc ? (
+                            <ArrowDown />
+                          ) : (
+                            <ArrowUp />
+                          )
                         ) : (
-                          <ArrowUp />
-                        )
-                      ) : (
-                        <CaretSort height={18} width={18} />
-                      )}
-                    </span>
-                  </div>
-                </th>
-              ))}
+                          // Hide the caret sign from 'Actions' column, which doesn't require the sort option
+                          !column.disableSortBy && (
+                            <CaretSort height={18} width={18} />
+                          )
+                        )}
+                      </span>
+                    </div>
+                  </th>
+                );
+              })}
             </tr>
           ))}
         </thead>
