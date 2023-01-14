@@ -91,8 +91,9 @@ const ReactQueryTable = ({ data }) => {
                   trigger={<Trashcan width={22} height={22} />}
                   position='right center'
                   modal
-                  // closeOnDocumentClick={false}
-                  overlayStyle={{ background: 'gray', opacity: '0.9' }}
+                  overlayStyle={{
+                    backdropFilter: 'blur(5px)',
+                  }}
                   contentStyle={{
                     background: 'white',
                     opacity: '1',
@@ -118,7 +119,9 @@ const ReactQueryTable = ({ data }) => {
                   position='right center'
                   modal
                   // closeOnDocumentClick={false}
-                  overlayStyle={{ background: 'gray', opacity: '0.9' }}
+                  overlayStyle={{
+                    backdropFilter: 'blur(5px)',
+                  }}
                   contentStyle={{
                     background: 'white',
                     opacity: '1',
@@ -187,7 +190,10 @@ const ReactQueryTable = ({ data }) => {
             position='right center'
             modal
             // closeOnDocumentClick={false}
-            overlayStyle={{ background: 'gray', opacity: '0.9' }}
+            // overlayStyle={{ background: 'gray', opacity: '0.9' }}
+            overlayStyle={{
+              backdropFilter: 'blur(5px)',
+            }}
             contentStyle={{
               background: 'white',
               opacity: '1',
