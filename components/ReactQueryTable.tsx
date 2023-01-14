@@ -259,10 +259,9 @@ const ReactQueryTable = ({ data }) => {
           Previous
         </button>
         <p className='flex items-center gap-2'>
-          {pageNumbers.map((pg) => (
-            <span className='px-4 cursor-not-allowed hover-animation'>
-              {' '}
-              {pg}{' '}
+          {pageNumbers.map((pg, idx) => (
+            <span key={idx} className='px-4 cursor-not-allowed hover-animation'>
+              {pg}
             </span>
           ))}
         </p>
