@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { useState } from 'react';
 import Cross from '../assets/Cross';
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 
 const AddUserModalContent = ({ close }: any) => {
+  const queryClient = useQueryClient();
+
   const [newUserDetails, setNewUserDetails] = useState({
     name: '',
     email: '',
@@ -28,34 +30,19 @@ const AddUserModalContent = ({ close }: any) => {
     const { data: response } = await axios.post(
       `${process.env.NEXT_PUBLIC_BASE_URL}/users`,
       params
-      //   {
-      //     headers: {
-      //       'Cache-Control': 'no-cache',
-      //     },
-      //   }
     );
-    // console.log(response);
-
     return response.data;
   };
 
   const { mutate: addUser, isLoading } = useMutation(addUserAPICall, {
     onSuccess: (data) => {
-      console.log(data);
-      //   queryClient.invalidateQueries();
-      //   queryClient.refetchQueries('users');
-      //   queryClient.invalidateQueries('users');
-      //   const message = "success"
-      //   alert(message)
+      queryClient.invalidateQueries('users');
     },
     onError: () => {
-      alert('there was an error');
+      console.log('Error while adding new user');
     },
     onSettled: () => {
-      //   queryClient.invalidateQueries();
-      console.log('settled');
-      //   queryClient.refetchQueries('users');
-      //   queryClient.invalidateQueries('users');
+      console.log('New user creation mutation settled');
     },
   });
 
