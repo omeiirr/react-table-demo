@@ -1,21 +1,27 @@
 // @ts-nocheck
 
-import { useTable, useSortBy } from 'react-table';
 import React from 'react';
-import CaretSort from '../assets/CaretSort';
-import ArrowDown from '../assets/ArrowDown';
-import ArrowUp from '../assets/ArrowUp';
-import Pencil from '../assets/Pencil';
-import Trashcan from '../assets/Trashcan';
+
+// libraries
+import { useTable, useSortBy } from 'react-table';
 import Popup from 'reactjs-popup';
-import DeleteUserModalContent from './DeleteUserModalContent';
-import EditUserModalContent from './EditUserModalContent';
-import Download from '../assets/Download';
-import Add from '../assets/Add';
+
+// components
 import AddUserModalContent from './AddUserModalContent';
+import Badge from './Badge';
+import DeleteUserModalContent from './DeleteUserModalContent';
+import Download from '../assets/Download';
+import EditUserModalContent from './EditUserModalContent';
+
+// assets
+import Add from '../assets/Add';
+import ArrowDown from '../assets/ArrowDown';
 import ArrowRight from '../assets/ArrowRight';
 import ArrowLeft from '../assets/ArrowLeft';
-import Badge from './Badge';
+import ArrowUp from '../assets/ArrowUp';
+import CaretSort from '../assets/CaretSort';
+import Pencil from '../assets/Pencil';
+import Trashcan from '../assets/Trashcan';
 
 const ReactQueryTable = ({ data }) => {
   const pageNumbers = [1, 2, 3, 4, 5];

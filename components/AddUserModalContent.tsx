@@ -1,7 +1,11 @@
-import axios from 'axios';
 import { useState } from 'react';
-import Cross from '../assets/Cross';
+
+// libraries
+import axios from 'axios';
 import { useMutation, useQueryClient } from 'react-query';
+
+// assets
+import Cross from '../assets/Cross';
 
 const AddUserModalContent = ({ close }: any) => {
   const queryClient = useQueryClient();

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import Cross from '../assets/Cross';
-import { useMutation } from 'react-query';
+
+// libraries
 import axios from 'axios';
-import { useQueryClient } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
+
+// assets
+import Cross from '../assets/Cross';
 
 const EditUserModalContent = ({ close, userToEdit }: any) => {
   const queryClient = useQueryClient();
