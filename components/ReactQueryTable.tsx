@@ -12,6 +12,7 @@ import DeleteUserModalContent from './DeleteUserModalContent';
 import EditUserModalContent from './EditUserModalContent';
 import Download from '../assets/Download';
 import Add from '../assets/Add';
+import AddUserModalContent from './AddUserModalContent';
 
 const ReactQueryTable = ({ data }) => {
   const columns = React.useMemo(
