@@ -2,37 +2,29 @@ import React from 'react';
 import Cross from '../assets/Cross';
 import { useMutation } from 'react-query';
 import axios from 'axios';
-import { QueryClient } from 'react-query';
+import { useQueryClient } from 'react-query';
 
 const DeleteUserModalContent = ({ close, userToDelete }: any) => {
   // User deletion
   const userId = userToDelete.id;
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
 
   const deleteUserAPICall = async (userId: string) => {
     const { data: response } = await axios.delete(
       `${process.env.NEXT_PUBLIC_BASE_URL}/users/${userId}`
     );
-    console.log(response);
-
     return response.data;
   };
 
   const { mutate: deleteUser, isLoading } = useMutation(deleteUserAPICall, {
     onSuccess: (data) => {
-      console.log(data);
-      //   queryClient.refetchQueries('fetchAllUsers');
-      //   queryClient.invalidateQueries('fetchAllUsers');
-      //   const message = "success"
-      //   alert(message)
+      queryClient.invalidateQueries('users');
     },
     onError: () => {
-      alert('there was an error');
+      console.log('Error while deleting user');
     },
     onSettled: () => {
-      console.log('settled');
-      //   queryClient.invalidateQueries('fetchAllUsers');
-      //   queryClient.refetchQueries('fetchAllUsers');
+      console.log('Delete mutation settled');
     },
   });
 
