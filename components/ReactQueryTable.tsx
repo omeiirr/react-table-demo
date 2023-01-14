@@ -13,8 +13,11 @@ import EditUserModalContent from './EditUserModalContent';
 import Download from '../assets/Download';
 import Add from '../assets/Add';
 import AddUserModalContent from './AddUserModalContent';
+import ArrowRight from '../assets/ArrowRight';
+import ArrowLeft from '../assets/ArrowLeft';
 
 const ReactQueryTable = ({ data }) => {
+  const pageNumbers = [1, 2, 3, 4, 5];
   const columns = React.useMemo(
     () => [
       {
@@ -245,6 +248,27 @@ const ReactQueryTable = ({ data }) => {
           })}
         </tbody>
       </table>
+
+      <div className='flex items-center justify-between p-4'>
+        <button className='flex items-center gap-3 p-3 normal-case cursor-not-allowed btn-secondary'>
+          <ArrowLeft className='mt-1' />
+          Previous
+        </button>
+        <p className='flex items-center gap-2'>
+          {pageNumbers.map((pg) => (
+            <span className='px-4 cursor-not-allowed hover-animation'>
+              {' '}
+              {pg}{' '}
+            </span>
+          ))}
+        </p>
+        <button className='flex items-center gap-3 p-3 normal-case cursor-not-allowed btn-secondary'>
+          Next
+          <span>
+            <ArrowRight className='mt-1' />
+          </span>
+        </button>
+      </div>
     </div>
   );
 };
