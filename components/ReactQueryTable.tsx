@@ -186,7 +186,11 @@ const ReactQueryTable = ({ data }) => {
               borderRadius: '20px',
             }}
           >
-            <div className='bg-white shadow-2xl rounded-xl'>New user</div>
+            {(close) => (
+              <div className='rounded-xl'>
+                <AddUserModalContent close={close} />
+              </div>
+            )}
           </Popup>
         </div>
       </div>
