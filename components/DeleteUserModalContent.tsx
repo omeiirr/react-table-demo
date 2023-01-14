@@ -29,7 +29,7 @@ const DeleteUserModalContent = ({ close, userToDelete }: any) => {
   });
 
   return (
-    <div className='flex flex-col gap-4 rounded-lg shadow-xl'>
+    <div className='flex flex-col gap-4 modal-container '>
       <header className='p-4 text-lg font-semibold border-b-2'>
         <div className='flex items-center justify-between '>
           <p>Delete User</p>

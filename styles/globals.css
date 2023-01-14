@@ -17,4 +17,7 @@
   .hover-animation {
     @apply p-2 transition-all duration-200 rounded-full hover:bg-gray-200;
   }
+  .modal-container {
+    @apply border-[1px] border-gray-500 rounded-xl shadow-xl;
+  }
 }
