@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useQuery } from 'react-query';
-import ReactQueryWithTable from './Table';
+import ReactQueryTable from './ReactQueryTable';
 
 const BasicQuery = () => {
   const fetchAllUsers = async () =>
@@ -18,7 +18,7 @@ const BasicQuery = () => {
 
       {status === 'loading' && <div>Loading...</div>}
 
-      {status === 'success' && <ReactQueryWithTable data={data} />}
+      {status === 'success' && <ReactQueryTable data={data} />}
     </div>
   );
 };
