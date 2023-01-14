@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import Cross from '../assets/Cross';
 import { useMutation } from 'react-query';
 import axios from 'axios';
-import { QueryClient } from 'react-query';
+import { useQueryClient } from 'react-query';
 
 const EditUserModalContent = ({ close, userToEdit }: any) => {
-  const queryClient = new QueryClient();
-
+  const queryClient = useQueryClient();
   const [newUserDetails, setNewUserDetails] = useState({
     name: userToEdit.name,
     role: userToEdit.role,
@@ -27,34 +26,20 @@ const EditUserModalContent = ({ close, userToEdit }: any) => {
     const { data: response } = await axios.put(
       `${process.env.NEXT_PUBLIC_BASE_URL}/users/${userToEdit.id}`,
       params
-      //   {
-      //     headers: {
-      //       'Cache-Control': 'no-cache',
-      //     },
-      //   }
     );
-    console.log(response);
 
     return response.data;
   };
 
   const { mutate: editUser, isLoading } = useMutation(editUserAPICall, {
     onSuccess: (data) => {
-      console.log(data);
-      queryClient.invalidateQueries();
-      //   queryClient.refetchQueries('users');
-      //   queryClient.invalidateQueries('users');
-      //   const message = "success"
-      //   alert(message)
+      queryClient.invalidateQueries('users');
     },
     onError: () => {
-      alert('there was an error');
+      console.log('Error while editing user');
     },
     onSettled: () => {
-      queryClient.invalidateQueries();
-      console.log('settled');
-      //   queryClient.refetchQueries('users');
-      //   queryClient.invalidateQueries('users');
+      console.log('Edit mutation settled');
     },
   });
 
