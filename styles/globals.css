@@ -11,7 +11,7 @@
   }
 
   .input {
-    @apply w-full p-2 my-2 border-2 rounded-lg;
+    @apply w-full p-2 mb-2 border-2 rounded-lg;
   }
 
   .hover-animation {
