@@ -161,7 +161,7 @@ const ReactQueryTable = ({ data }) => {
           </p>
         </div>
         <div className='flex gap-4'>
-          <button className='flex items-center gap-2 btn-secondary'>
+          <button className='flex items-center gap-2 cursor-not-allowed btn-secondary'>
             <span>
               <Download />
             </span>
@@ -180,7 +180,11 @@ const ReactQueryTable = ({ data }) => {
             modal
             // closeOnDocumentClick={false}
             overlayStyle={{ background: 'gray', opacity: '0.9' }}
-            // contentStyle={{ background: 'white', opacity: '1' }}
+            contentStyle={{
+              background: 'white',
+              opacity: '1',
+              borderRadius: '20px',
+            }}
           >
             <div className='bg-white shadow-2xl rounded-xl'>New user</div>
           </Popup>
@@ -193,7 +197,7 @@ const ReactQueryTable = ({ data }) => {
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
                 <th
-                  className='border-b-[1px] p-4 font-semibold text-left '
+                  className='border-t-[1px] p-4 font-semibold text-left '
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                 >
                   <div className='flex items-center gap-3'>
