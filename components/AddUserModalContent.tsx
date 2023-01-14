@@ -59,8 +59,8 @@ const AddUserModalContent = ({ close }: any) => {
       <main className='p-4'>
         <p>Enter user details</p>
 
-        <form className='flex flex-col items-start '>
-          <p>Name</p>
+        <form className='flex flex-col items-start mt-3'>
+          <p className='mt-2 ml-2 font-semibold'>Name</p>
           <input
             name='name'
             onChange={handleChange}
@@ -69,7 +69,7 @@ const AddUserModalContent = ({ close }: any) => {
             value={newUserDetails.name}
             className='input'
           />
-          <p>Email</p>
+          <p className='mt-2 ml-2 font-semibold'>Email</p>
           <input
             name='email'
             onChange={handleChange}
@@ -78,7 +78,7 @@ const AddUserModalContent = ({ close }: any) => {
             value={newUserDetails.email}
             className='input'
           />
-          <p>Role</p>
+          <p className='mt-2 ml-2 font-semibold'>Role</p>
           <input
             name='role'
             onChange={handleChange}

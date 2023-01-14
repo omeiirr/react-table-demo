@@ -53,11 +53,11 @@ const EditUserModalContent = ({ close, userToEdit }: any) => {
           </button>
         </div>
       </header>
-      <main className='p-4'>
+      <main className='p-4 '>
         <p>Edit details of {userToEdit.name}</p>
 
-        <form className='flex flex-col items-start '>
-          <p>Name</p>
+        <form className='flex flex-col items-start mt-3 '>
+          <p className='mt-2 ml-2 font-semibold'>Name</p>
           <input
             name='name'
             onChange={handleChange}
@@ -66,7 +66,7 @@ const EditUserModalContent = ({ close, userToEdit }: any) => {
             value={newUserDetails.name}
             className='input'
           />
-          <p>Role</p>
+          <p className='mt-2 ml-2 font-semibold'>Role</p>
           <input
             name='role'
             onChange={handleChange}
