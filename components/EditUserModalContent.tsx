@@ -5,8 +5,6 @@ import axios from 'axios';
 import { QueryClient } from 'react-query';
 
 const EditUserModalContent = ({ close, userToEdit }: any) => {
-  const inputStyling = 'border-2 rounded-lg p-2 my-2 w-full';
-
   const queryClient = new QueryClient();
 
   const [newUserDetails, setNewUserDetails] = useState({
@@ -81,7 +79,7 @@ const EditUserModalContent = ({ close, userToEdit }: any) => {
             type='text'
             placeholder='Name'
             value={newUserDetails.name}
-            className={inputStyling}
+            className='input'
           />
           <p>Role</p>
           <input
@@ -90,7 +88,7 @@ const EditUserModalContent = ({ close, userToEdit }: any) => {
             type='text'
             placeholder='Role'
             value={newUserDetails.role}
-            className={inputStyling}
+            className='input'
           />
           {/* <input
               type='text'

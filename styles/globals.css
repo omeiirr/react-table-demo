@@ -9,5 +9,9 @@
   .btn-secondary {
     @apply border-[1px] uppercase text-sm font-medium shadow-sm hover:shadow-md transition duration-150 ease-in-out hover:bg-gray-100 border-gray-300 px-6 py-2.5 rounded;
   }
+
+  .input {
+    @apply w-full p-2 my-2 border-2 rounded-lg;
+  }
   }
 }
