@@ -48,7 +48,8 @@ const DeleteUserModalContent = ({ close, userToDelete }: any) => {
       </header>
       <main className='p-4'>
         <p>
-          Are you sure you want to delete user {userId} {userToDelete.name}?
+          Are you sure you want to delete user
+          <span className='font-semibold '> {userToDelete.name}</span>?
         </p>
         <p>This action cannot be reversed.</p>
       </main>
